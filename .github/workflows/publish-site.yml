@@ -1,0 +1,17 @@
+name: Publish the website
+
+on:
+  push:
+    branches:
+      - test-site
+
+jobs:
+  publish:
+    name: Publish site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build site assets
+        run: echo $GITHUB_WORKSPACE
+      - name: Publish site to calcite-site repository
+        working-directory: site
+        run: echo Publishing...
